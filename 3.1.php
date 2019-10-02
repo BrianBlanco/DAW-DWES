@@ -14,7 +14,7 @@
        
         <h1>
             <?php    
-                echo $valorAComprobarM;
+                //echo $valorAComprobarM;
                 $numero = 3;
                 isInt($numero);
 
