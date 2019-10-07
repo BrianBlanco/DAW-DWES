@@ -33,24 +33,53 @@
             # Posicionar la pelota
             $pelotaY = rand (0, $tamañoMapa - 1);
             $pelotaX = rand (0, $tamañoMapa - 1);
-
             # Con la línea precedente nos aseguramos de que la posición inicial de la paloma
             # y su casa disten como mínimo la mitad del mapa. La función abs() devuelve el valor
             # absoluto, esto es, la cifra sin signo.
 
-            do {
-                do{
-                    echo $pelotaX;
-                    #Acercar la pelota a su casa
-                    if ($pelotaX < $tamañoMapa)
-                        $pelotaX++;
-                    elseif ($pelotaX > $tamañoMapa)
-                        $pelotaX--;
+            //Si la dirección es true, irá positivamente, sino, negativamente
+            $direccionX = true;
+            $direccionY = true;
 
-                    if ($pelotaY < $tamañoMapa)
-                        $pelotaY++;
-                    elseif ($pelotaY > $tamañoMapa)
+            do {
+
+                do {
+
+                    if ($pelotaX >= 9) {
+                        $pelotaX--;
+                        $direccionX = !$direccionX;
+                        break;
+                    }
+
+                    if ($pelotaX <= 0) {
+                        $pelotaX++;
+                        $direccionX = !$direccionX;
+                        break;
+                    }
+
+                    if ($pelotaY >= 9) {
                         $pelotaY--;
+                        $direccionY = !$direccionY;
+                        break;
+                    }
+
+                    if ($pelotaY <= 0) {
+                        $pelotaY++;
+                        $direccionY = !$direccionY;
+                        break;
+                    }
+
+                    if ($direccionX) {
+                        $pelotaX++;
+                    } else {
+                        $pelotaX--;
+                    }
+                    
+                    if ($direccionY) {
+                        $pelotaY++;
+                    } else {
+                        $pelotaY--;
+                    }
 
                     #Mostrar el mapa actual
                     echo '<div class="map" style="width: ' . $tamañoMapa . 'em;"><pre>';
@@ -63,15 +92,18 @@
                             } else {
                                 echo '<span class="aire">.</span>'; #Aire
                             }
-                            echo ($x != $tamañoMapa - 1) ? " " : ""; #siempre se añade un carácter de espacio en cada celda, salvo al final.
-                        }                       
+                            echo ($x != $tamañoMapa - 1) ? " " : ""; #Siempre se añade un carácter de espacio en cada celda, salvo al final.
+                        }
                         echo "\n"; #Salto de línea. como se está dentro de un <pre>, se reflejará en la pantalla.
                     }
 
                     echo "</pre>Pelotax=$pelotaX PelotaY=$pelotaY\n</div>";
-                } while($pelotaX < $tamañoMapa - 1 || $pelotaY < $tamañoMapa - 1);
-            
+                    
+
+                } while(true);
+                
                 $contadorRebotes++;
+
             } while ($contadorRebotes < 6);
           
             ?>   
