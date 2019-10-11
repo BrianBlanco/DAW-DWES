@@ -97,7 +97,7 @@
                         echo "\n"; #Salto de línea. como se está dentro de un <pre>, se reflejará en la pantalla.
                     }
 
-                    echo "</pre>Pelotax=$pelotaX PelotaY=$pelotaY\n</div>";
+                    echo "</pre>Pelotax=$pelotaX PelotaY=$pelotaY\nRebotes=$contadorRebotes</div>";
                     
 
                 } while(true);
