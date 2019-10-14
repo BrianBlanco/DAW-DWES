@@ -45,6 +45,24 @@
 
                 do {
 
+                    #Mostrar el mapa actual
+                    echo '<div class="map" style="width: ' . $tamañoMapa . 'em;"><pre>';
+                    # Recuérdese que con la etiqueta <pre> los saltos de línea que haya se reflejan en la pantalla
+
+                    for ($y = 0; $y < $tamañoMapa; $y++) {
+                        for ($x = 0; $x < $tamañoMapa; $x++) {
+                            if ($x == $pelotaX && $y == $pelotaY) {
+                                echo '<span class="paloma">O</span>'; #Pelota
+                            } else {
+                                echo '<span class="aire">.</span>'; #Aire
+                            }
+                            echo ($x != $tamañoMapa - 1) ? " " : ""; #Siempre se añade un carácter de espacio en cada celda, salvo al final.
+                        }
+                        echo "\n"; #Salto de línea. como se está dentro de un <pre>, se reflejará en la pantalla.
+                    }
+
+                    echo "</pre>Pelotax=$pelotaX PelotaY=$pelotaY\nRebotes=$contadorRebotes</div>";
+                    
                     if ($pelotaX >= 9) {
                         $pelotaX--;
                         $direccionX = !$direccionX;
@@ -80,25 +98,6 @@
                     } else {
                         $pelotaY--;
                     }
-
-                    #Mostrar el mapa actual
-                    echo '<div class="map" style="width: ' . $tamañoMapa . 'em;"><pre>';
-                    # Recuérdese que con la etiqueta <pre> los saltos de línea que haya se reflejan en la pantalla
-
-                    for ($y = 0; $y < $tamañoMapa; $y++) {
-                        for ($x = 0; $x < $tamañoMapa; $x++) {
-                            if ($x == $pelotaX && $y == $pelotaY) {
-                                echo '<span class="paloma">O</span>'; #Pelota
-                            } else {
-                                echo '<span class="aire">.</span>'; #Aire
-                            }
-                            echo ($x != $tamañoMapa - 1) ? " " : ""; #Siempre se añade un carácter de espacio en cada celda, salvo al final.
-                        }
-                        echo "\n"; #Salto de línea. como se está dentro de un <pre>, se reflejará en la pantalla.
-                    }
-
-                    echo "</pre>Pelotax=$pelotaX PelotaY=$pelotaY\nRebotes=$contadorRebotes</div>";
-                    
 
                 } while(true);
                 
