@@ -8,7 +8,7 @@
 
         <?php
 
-        $cadena = "a e i o u";
+        $cadena = "aguacate";
         echo "Original: $cadena <br>";
 
         for ($i = 0; $i < strlen($cadena); $i++) {
@@ -43,10 +43,18 @@
             }
         }
 
-        echo "Codificado: $cadena2 <br>";
+        for ($i = 0; $i < strlen($cadena2); $i = $i + 2) {
+            $aux .= $cadena2[$i+1].$cadena2[$i];
+        }
 
-        for ($i = 0; $i < strlen($cadena2); $i++) {
-            $letra = $cadena2[$i];
+        echo "Codificado: $aux <br>";
+
+        for ($i = 0; $i < strlen($aux); $i = $i + 2) {
+            $aux2 .= $aux[$i+1].$aux[$i];
+        }
+
+        for ($i = 0; $i < strlen($aux2); $i++) {
+            $letra = $aux2[$i];
 
             switch ($letra) {
                 case 'e':
