@@ -3,8 +3,15 @@
 <head>
 
     <style>
-        table {
-            border: 1px solid red;
+        table, th, td {
+            border: 1px solid blue;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: yellow;
+        }
+        td {
+            background-color: red;
         }
     </style>
 </head>
@@ -17,15 +24,29 @@
 
         <?php
         $cadena = strtolower("Aguacate");
-        $arrayConLetras = "abcdefghijklmnñopqrstuvwxyz";
-        $arrayConNumeros;
-        echo "<table>";
-        
-        for ($i = 0; $i < strlen($cadena); $i++) { 
-            $pos = strpos($letras, $cadena[$i]);
-            $arrayConNumeros;
+        $arrayConLetras = "abcdefghijklmnopqrstuvwxyz";
+        $arrayConNumeros = array();
+
+        for ($i = 0; $i < strlen($arrayConLetras); $i++) { 
+            $arrayConNumeros[$i] = 0;
         }
 
+        echo "<table>";
+        
+        for ($i = 0; $i < strlen($cadena); $i++) {
+            $pos = strpos($arrayConLetras, $cadena[$i]);
+            $arrayConNumeros[$pos]++;
+        }
+
+        for ($i = 0; $i < strlen($arrayConLetras); $i++) { 
+            echo "<th>".$arrayConLetras[$i]."</th>";
+        }
+
+        echo "<tr>";
+        for ($i = 0; $i < strlen($arrayConLetras); $i++) { 
+            echo "<td>".$arrayConNumeros[$i]."</td>";
+        }
+        echo "</tr>";
         echo "</table>";
 
 
