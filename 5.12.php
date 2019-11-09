@@ -112,7 +112,7 @@
                     if ($plataforma[3] >= 9) {
                         $direccionPlataforma = !$direccionPlataforma;
 
-                    } else if ($plataforma[0] <= 0) {
+                    } else if ($plataforma[0] < 0) {
                         $direccionPlataforma = !$direccionPlataforma;
                     }
 
