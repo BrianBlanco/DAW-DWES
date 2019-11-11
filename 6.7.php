@@ -21,7 +21,6 @@
 
 
     <h1>
-
         <?php
         $cadena = strtolower("Aguacate");
         $arrayConLetras = "abcdefghijklmnopqrstuvwxyz";
