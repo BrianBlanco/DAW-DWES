@@ -1,12 +1,8 @@
 <html>
 
 <body>
-    <?php
-    if (!isset($_POST["resultado"])) {
 
-        ?>
-        
-        
+
         <form action="Ej4.php" method="POST">
             <label for="">Primer Número</label>
             <input type="text" name="num1" id="num1">
@@ -20,22 +16,39 @@
             </select>
             <br>
             <label for="">Segundo Número</label>
-            <input type="text" name="num1" id="num1">
+            <input type="text" name="num2" id="num2">
             <br>
             <input type="submit" name="submit" id="submit">
         </form>
 
     <?php
 
-    } else {
-        
-        if (empty($_POST["resultado"])) {
-            echo "No se ha escrito un nombre";
-        } else {
-            echo "Bienvenid@ ";
-            echo $_POST["nombre"];
+
+        $num1 = $_POST["num1"];
+        $operador = $_POST["operador"];
+        $num2 = $_POST["num2"];
+
+        switch ($operador) {
+            case '+':
+            $resultado = $num1 + $num2;
+                break;
+
+            case '-':
+            $resultado = $num1 - $num2;
+                break;
+
+            case '*':
+            $resultado = $num1 * $num2;
+                break;
+
+            case '/':
+            $resultado = $num1 / $num2;
+                break;
         }
-    }
+        
+        echo $resultado;
+        
+    
 
     ?>
 </body>
