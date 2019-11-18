@@ -15,7 +15,7 @@
 
     td {
         border: 1px solid red;
-    }
+        }
 
     </style>
 </head>
@@ -24,7 +24,7 @@
             <?php
                 $i = 1;
                 echo "<table>";
-                while ($i <= 10) {
+                do {
 
                     echo "<tr><th>El número $i</th>";
 
@@ -49,8 +49,9 @@
 
                     $i++;
 
-                }
+                } while ($i <= 10);
                 echo "</table>";
+                
                 function primo($num) {
                         $cont=0;
                         

@@ -15,17 +15,15 @@
 
     td {
         border: 1px solid red;
-    }
+        }
 
     </style>
 </head>
     <body>
        
             <?php
-                $i = 1;
                 echo "<table>";
-                while ($i <= 10) {
-
+                for ($i = 1; $i <= 10; $i++) {
                     echo "<tr><th>El número $i</th>";
 
                     echo "<td>";
@@ -37,8 +35,7 @@
                     }
 
                     echo "</td><td>";
-
-                    
+                                        
                     if (primo($i)) {
                         echo "Es primo";
                     } else {
@@ -47,10 +44,10 @@
 
                     echo "</td></tr>";
 
-                    $i++;
-
                 }
+
                 echo "</table>";
+                
                 function primo($num) {
                         $cont=0;
                         

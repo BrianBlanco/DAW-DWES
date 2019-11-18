@@ -7,7 +7,7 @@
        
         <h1>
             <?php
-                $año = 2023;
+                $año = 2001;
 
                 if ($año % 4 == 0) {
                     if ($año % 400 == 0) {
@@ -22,7 +22,6 @@
                 } else {
                     echo "No es bisiesto";
                 }
-                
            
             ?>   
            
