@@ -6,7 +6,7 @@
 <body>
 
     <?php
-
+    
     $array = array(
         "uno"       => 1,
         "dos"       => 2,
@@ -17,7 +17,7 @@
 
 
     end($array);
-    for ($i = 0; $i < count($array); $i++) {
+    for ($i = count($array); $i > 0; $i--) {
         echo "Elemento: " . current($array) . "<br>";
         prev($array);
     }

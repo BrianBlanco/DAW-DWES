@@ -8,17 +8,11 @@
 
     <?php
 
-    $array = array(
-        "uno"       => 1,
-        "dos"       => 2,
-        "tres"      => 3,
-        "Aguacate"  => "Aguacate",
-        "Patata"    => "Patata"
-    );
+    $array = array(1, 2, 3, "Patata", "Aguacate");
 
 
     end($array);
-    for ($i = 0; $i < count($array); $i++) {
+    for ($i = count($array); $i > 0; $i--) {
         echo "Elemento: " . current($array) . "<br>";
         prev($array);
     }

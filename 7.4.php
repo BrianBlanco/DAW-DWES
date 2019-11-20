@@ -17,9 +17,8 @@
 
     foreach ($array as $posicion => $item) {
         echo "Sin ucfirst: $item <br>";
-        $array[$posicion];
-        //$array[$posicion] = ucfirst($array[$posicion]);
-        echo "Con ucfirst: $item <br><br>";
+        $array[$posicion] = ucfirst($array[$posicion]);
+        echo "Con ucfirst: $array[$posicion]<br><br>";
     }
 
     ?>
